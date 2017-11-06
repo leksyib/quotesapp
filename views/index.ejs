@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="style/css" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <title>MY APP</title>
+    <title>QUOTES APP</title>
 </head>
 
 <body>
-    May Node and Express be with you.
+    <h1 class='monkey' >Welcome to Quotes App, you can post, delete, edit and update quotes here!</h1>
 <div  class="card" style="width: 20rem;" >
     <ul class="list-group list-group-flush">
         <% for(var i=0; i<quotes.length; i++) {%>
             <li class="list-group-item">
-                <span>
+                <span class="monkey" onClick="alert('<%= quotes[i].name %>: <%= quotes[i].quote %>')">
                     <%= quotes[i].name %>:
                 </span>
                 <span>
@@ -25,19 +25,19 @@
             <% } %>
     </ul>
 </div>
+<div class="class="form-group has-success"">
     <form action="/quotes" method="POST">
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="name" name="name">
-    </div>
+        <div class="form-group">
+            <input type="text" class="form-control-label" placeholder="name" name="name">
+        </div>
 
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="quote" name="quote">
-    </div>
+        <div class="form-group">
+            <input type="text" class="form-control-label" placeholder="quote" name="quote">
+        </div>
 
-    <button type="submit" class="btn btn-primary" >Submit</button>
-    
-        
+        <button type="submit" class="btn btn-success" >Submit</button>
     </form>
+</div>
 </body>
 
 </html>
